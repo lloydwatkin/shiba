@@ -142,7 +142,8 @@ module Shiba
           end
 
           run = "git diff#{cmd} --name-only --diff-filter=d"
-
+puts "CMD *********"
+puts cmd
           if options[:verbose]
             $stderr.puts run
           end
@@ -183,6 +184,8 @@ module Shiba
           when options["unstaged"]
             ""
           else
+            puts "CMD METHOD"
+            puts options.to_json
             commit = " origin/HEAD"
             commit << "...#{options["branch"]}" if options["branch"]
             commit
