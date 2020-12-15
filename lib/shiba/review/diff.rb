@@ -146,6 +146,7 @@ module Shiba
           if options[:verbose]
             $stderr.puts run
           end
+          puts "****", run
           result = `#{run}`
           if $?.exitstatus != 0
             $stderr.puts result
